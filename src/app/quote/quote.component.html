@@ -1,0 +1,30 @@
+
+<div id="title1">
+    <h1 class="one">Welcome to Quotez</h1>
+  </div> 
+  <hr>
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-5"> 
+      <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+    </div>
+    <div class="col-md-5" id="details">
+      <div id="detail-title">
+        <h1>Your Quotes:</h1>
+      </div>
+      <hr>
+      <br>
+      
+      <div *ngFor ='let quote of quotes; let i = index'>
+        <li>Quote By ~{{quote.author}}</li>
+          <button (click)="quoteDetails(i)" class="btn btn-success">View Details</button>
+          
+          <app-quote-details *ngIf ="quote.showDescription" [quotes] ='quote' (isComplete) = 'deleteQuote($event,i)'></app-quote-details>
+      </div>
+      
+    </div>
+  </div>
+  <hr class="featurette-divider" />
+  <p class="nb" id="footnote" align="center"><font face="arial" size="4">Created By...<br>
+       <a href="https://kmbaria.github.io/g.portfolio/">George Kmbaria</a></font></p>
+      

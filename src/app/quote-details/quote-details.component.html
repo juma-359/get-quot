@@ -1,0 +1,15 @@
+<p>{{quote.description}}</p>
+<p>This quote was posted {{quote.publishDate | dateCount}} days ago</p> <div class="row" id="view-details">
+   <div class=col-md-2>
+       <button class="btn btn-success" >Upvote </button> 
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-2">
+      <button class="btn btn-warning">Downvote </button> 
+    </div> 
+    <div class="col-md-1"></div>
+    <div class="col-md-2">
+     <button (click) = 'quoteDelete(true)' class="btn btn-danger">Delete Quote</button>
+    </div>
+</div> 
+
